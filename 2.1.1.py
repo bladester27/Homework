@@ -5,15 +5,20 @@ class Book:
         self.year = year
         self.gen = gen
 
-    def info(self):
-        return self.avt, self.name, self.year, self.gen
+    def __repr__(self):
+        return f'{self.name}, {self.gen}, {self.avt}, {self.year}'
+
+    def __str__(self):
+        return f'{self.name}, {self.gen}, {self.avt}, {self.year}'
+
+    def print_info(self):
+        return f'{self.name}, {self.gen}, {self.avt}, {self.year}'
 
 
 book1 = Book('Джоан роулинг', 'Гарри поттер и узник Азкабана', 2019, 'Фентези')
 book2 = Book('Стивен Кинг', 'Зеленая миля', 2014, 'Драма')
 book3 = Book('Джоан роулинг', 'Гарри поттер и узник Азкабана', 2019, 'Фентези')
-print(book1.info() == book3.info())
-print(book2.info() == book3.info())
-print(book1.info())
-print(book2.info())
-print(book3.info())
+print(book1.__repr__() == book3.__repr__())
+print(book1.__repr__() == book2.__repr__())
+print(book1.__str__() == book3.__str__())
+print(book1.__str__() == book2.__str__())
