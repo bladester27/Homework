@@ -11,9 +11,6 @@ class Book:
     def __str__(self):
         return f'{self.name}, {self.gen}, {self.avt}, {self.year}'
 
-    def print_info(self):
-        return f'{self.name}, {self.gen}, {self.avt}, {self.year}'
-
 
 book1 = Book('Джоан роулинг', 'Гарри поттер и узник Азкабана', 2019, 'Фентези')
 book2 = Book('Стивен Кинг', 'Зеленая миля', 2014, 'Драма')
