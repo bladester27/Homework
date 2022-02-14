@@ -7,6 +7,7 @@ class Car:
     def __str__(self):
         return f'Mark = {self.Mark}, Model = {self.Model}, Cost = {self.Cost}'
 
+
 class Racing(Car):
     def __init__(self, Speed, Mark, Model, Cost):
         super().__init__(Mark, Model, Cost)
