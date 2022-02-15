@@ -8,11 +8,11 @@ class Spanish:
         return 'Oye!'
 
 
-def test(x, y):
+def hello_friend(x, y):
     print(x.greeting())
     print(y.greeting())
 
 
 a = English()
 b = Spanish()
-test(a, b)
+hello_friend(a, b)
