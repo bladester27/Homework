@@ -1,10 +1,9 @@
 import socket
 
-# создаем TCP сокет-клиент
+x = input('Введите первое число - ')
+y = input('Введите второе число - ')
+ds = x, y
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# подключаемся к 8888 порту
-sock.connect(('localhost', 8888))
-# отпарлвяем сообщение
-sock.send(b'Test message')
-# закрываем сокет-соединение
+sock.connect(('127.0.0.7', 8888))
+sock.send(bytes(str(ds), encoding="UTF-8"))
 sock.close()

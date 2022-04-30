@@ -6,6 +6,5 @@ mac_dict = []
 for i in str(mac):
     mac_dict += i
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-msg = ('Hello you there!').encode('utf-8')
 sock.sendto(bytes(str(mac_dict), encoding="UTF-8"), ('localhost', 8888))
 
