@@ -1,5 +1,4 @@
 import socket
-import itertools
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.bind(('127.0.0.7', 8888))
@@ -13,11 +12,14 @@ while True:
         break
     else:
         result = client.recv(1024)
-        # client.close()
         ans = result.decode('utf-8')
         x = ans[1:ans.find(',')]
         y = ans[ans.find(',') + 2:]
         x1 = x.replace("'", "")
-        y1 = "".join(c for c in y if  c.isdecimal())
+        y1 = "".join(c for c in y if c.isdecimal())
         print(int(x1))
         print(y1)
+        z = int(x1) + int(y1)
+        print(z)
+        client.send(bytes(str(z), encoding="UTF-8"))
+        client.close()
